@@ -1,7 +1,4 @@
 {
-  "functions": {
-    "api/*.js": { "runtime": "nodejs22.x" }
-  },
   "rewrites": [
     { "source": "/teacher", "destination": "/index.html?role=teacher" },
     { "source": "/student", "destination": "/index.html?role=student" }
