@@ -15,7 +15,7 @@ async function api(method,body,query=''){
 }
 function setMessage(msg=''){state.message=msg;render()}
 function home(){state={...state,screen:'home',room:null,role:'',message:''};render()}
-function shell(content){return `<main class="wrap"><section class="hero"><div class="eyebrow">תוכנית השכלה כללית · שכבה י׳</div><h1>אני ישראלי</h1><p>מסע כיתתי חי בעקבות זהות, שייכות ומה שאנחנו בוחרים לקרוא לו ישראליות.</p></section>${content}<div class="footer">מקיף ז׳ אשדוד · פעילות כיתתית חיה</div></main>`}
+function shell(content){return `<main class="wrap"><section class="hero"><div class="eyebrow">תוכנית השכלה כללית · שכבה י׳</div><h1>זהות ישראלית - זהות מורכבת</h1><p>מסע כיתתי חי בעקבות זהות, שייכות ומה שאנחנו בוחרים לקרוא לו ישראליות.</p></section>${content}<div class="footer">מקיף ז׳ אשדוד · פעילות כיתתית חיה</div></main>`}
 function message(){return state.message?`<div class="notice">${e(state.message)}</div>`:''}
 
 function renderHome(){app.innerHTML=shell(`<section class="panel"><div class="role-grid"><button class="card" id="teacher"><h3>מסך מורה</h3><p>יצירת מרחב כיתתי, קוד ו־QR, פתיחת התחנות וצפייה בתוצאות.</p></button><button class="card" id="student"><h3>מסך תלמיד</h3><p>הצטרפות לכיתה בקוד אחד והתקדמות דרך שלוש התחנות.</p></button></div></section>`);document.getElementById('teacher').onclick=()=>{state.screen='teacherHome';render()};document.getElementById('student').onclick=()=>{state.screen='studentJoin';render()}}
