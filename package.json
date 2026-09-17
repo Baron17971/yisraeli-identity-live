@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "cp index.html app.js style.css stage1-picker.css stage1-picker.js student-entry.js projector.css projector.js hero-photo.css public/"
+    "build": "cp index.html app.js style.css stage1-picker.css stage1-picker.js student-entry.js projector.css projector.js hero-photo.css palette.css public/"
   },
   "dependencies": {
     "@vercel/functions": "latest",
