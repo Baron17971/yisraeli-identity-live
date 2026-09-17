@@ -1,0 +1,10 @@
+{
+  "name": "yisraeli-identity-live",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/functions": "latest",
+    "qrcode": "latest"
+  }
+}
