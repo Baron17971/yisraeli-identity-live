@@ -1,11 +1,11 @@
 (function(){
 'use strict';
+const PROD_ORIGIN='https://yisraeli-identity-live.vercel.app';
 const originalParams=new URLSearchParams(location.search);
 const isStudentPath=location.pathname==='/student';
 const directCode=(originalParams.get('code')||'').replace(/\D/g,'').slice(0,6);
 
-// Allow the existing app to recognize a direct /student?code=... link,
-// then restore the clean student URL after initialization.
+// Direct student links should enter the room automatically.
 if(isStudentPath&&directCode){
   const bootParams=new URLSearchParams(location.search);
   bootParams.set('role','student');
@@ -17,11 +17,11 @@ if(isStudentPath&&directCode){
 }
 
 function directStudentUrl(code){
-  return location.origin+'/student?code='+encodeURIComponent(code);
+  return PROD_ORIGIN+'/student?code='+encodeURIComponent(code);
 }
 
 function syncUi(){
-  // Teacher share card: QR and copied link must be exactly the same URL.
+  // Teacher share card: QR and copied link always use the same stable production URL.
   const shareCard=document.querySelector('.share-card');
   if(shareCard){
     const codeNode=document.querySelector('.teacher-header .room-code');
