@@ -57,3 +57,5 @@ function render(){if(state.screen==='home')renderHome();else if(state.screen==='
 render();
 
 // Redeploy copyright notice: 2026-09-18
+
+// Production redeploy: copyright notice verified 2026-09-19
