@@ -55,3 +55,5 @@ async function refreshRoom(){if(!state.room)return;try{const q=state.screen==='t
 let timer=null;function startPolling(){clearInterval(timer);timer=setInterval(async()=>{if(!['teacherRoom','studentRoom'].includes(state.screen))return;const before=state.room?.version;await refreshRoom();if(state.room?.version!==before||state.screen==='teacherRoom')render()},1800)}
 function render(){if(state.screen==='home')renderHome();else if(state.screen==='teacherRoom')renderTeacherRoom();else if(state.screen==='studentJoin')renderStudentJoin();else renderStudentRoom()}
 render();
+
+// Redeploy copyright notice: 2026-09-18
